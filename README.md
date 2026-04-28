@@ -12,32 +12,47 @@ A aplicação utiliza as seguintes tecnologias:
 - **JavaScript**: Para tornar o front-end dinâmico e interativo no lado do cliente.
 - **Bootstrap**: Framework CSS utilizado para agilizar o desenvolvimento responsivo e criar componentes visuais modernos.
 
-## 🐍 Ambiente Virtual (venv)
+## ⚙️ Como Instalar e Rodar o Projeto (Passo a Passo)
 
-Para garantir que as dependências do projeto não entrem em conflito com outras aplicações Python na sua máquina, é **altamente recomendável e necessário** o uso de um ambiente virtual (`venv`). O ambiente virtual isola os pacotes instalados para o projeto (como `flask` e `flask-sqlalchemy`), garantindo que as versões fiquem restritas a esta aplicação.
+Se você acabou de clonar este repositório e precisa rodar o projeto na sua máquina, siga os passos abaixo:
 
-**Como criar, ativar e instalar as dependências de ambiente:**
+**1. Clone o repositório e acesse a pasta:**
+```bash
+git clone https://github.com/DevCoutiinho/livraria.git
+cd livraria
+```
 
-1. **Criação do ambiente** (execute apenas uma vez, na raiz do diretório do projeto):
-   ```bash
-   python -m venv .venv
-   ```
+**2. Crie e ative o Ambiente Virtual (venv):**
+Isso garante que as dependências do projeto não entrem em conflito com outras da sua máquina.
+* **Criar:** `python -m venv .venv`
+* **Ativar no Windows:** `.venv\Scripts\activate`
+* **Ativar no Linux/Mac:** `source .venv/bin/activate`
 
-2. **Ativação do ambiente** (execute sempre que abrir o terminal para trabalhar no projeto):
-   - No Windows:
-     ```bash
-     .venv\Scripts\activate
-     ```
-   - No LinuX/MacOS:
-     ```bash
-     source .venv/bin/activate
-     ```
+**3. Instale as dependências:**
+Com o `(.venv)` ativado no terminal, leia e instale o pacote de requisitos:
+```bash
+pip install -r requirements.txt
+```
 
-3. **Instalação de pacotes**:
-   Com o ambiente ativado (você verá `(.venv)` no início da linha do terminal), você deve instalar os pacotes do projeto usando o `pip`:
-   ```bash
-   pip install flask flask-sqlalchemy
-   ```
+**4. Configuração das Variáveis de Ambiente:**
+Crie um arquivo chamado `.env` na raiz do projeto e configure suas variáveis baseando-se nas chaves usadas no `config.py`. Exemplo:
+```env
+SECRET_KEY=sua_chave_secreta_super_segura
+DATABASE_URL=sqlite:///app.db
+```
+
+**5. Preparação do Banco de Dados:**
+Para aplicar a estrutura inicial nas tabelas, usando a nossa migração já criada, execute:
+```bash
+flask db upgrade
+```
+
+**6. Inicializando a Aplicação:**
+Agora está tudo pronto! Levante o servidor Flask rodando o arquivo de entrada:
+```bash
+python run.py
+```
+Acesse a livraria em seu navegador através do endereço `http://127.0.0.1:5000/`.
 
 ## 🌿 Versionamento de Código com Git Flow
 
