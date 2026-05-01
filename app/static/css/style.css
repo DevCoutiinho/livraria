@@ -1,0 +1,76 @@
+:root {
+  --primary: #1A237E;
+  --secondary: #2E7D32;
+  --surface: #faf9f9;
+  --surface-low: #f5f5f5;
+  --surface-high: #ffffff;
+}
+
+body {
+  background-color: var(--surface);
+}
+
+.surface {
+  background-color: var(--surface);
+}
+
+.surface-low {
+  background-color: var(--surface-low);
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #000666, #1A237E);
+  color: white;
+  border: none;
+}
+
+.glass {
+  background: rgba(250, 249, 249, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+/* Architect Form Controls */
+.form-control-architect {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 0.75rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: none !important;
+}
+
+.form-control-architect:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid var(--primary);
+  outline: none;
+}
+
+.form-control-architect::placeholder {
+  color: #adb5bd;
+}
+
+/* Typography Helpers */
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.tracking-wide {
+  letter-spacing: 0.05em;
+}
+
+/* Base button styling */
+.btn-architect {
+  border-radius: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-architect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(26, 35, 126, 0.15);
+}

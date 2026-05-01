@@ -47,7 +47,13 @@ Para aplicar a estrutura inicial nas tabelas, usando a nossa migração já cria
 flask db upgrade
 ```
 
-**6. Inicializando a Aplicação:**
+**6. Povoando o Banco de Dados (Seeders):**
+Para inserir os dados iniciais necessários para o funcionamento da aplicação (como usuários padrão, permissões, etc.), execute o comando de seed:
+```bash
+flask seed
+```
+
+**7. Inicializando a Aplicação:**
 Agora está tudo pronto! Levante o servidor Flask rodando o arquivo de entrada:
 ```bash
 python run.py
