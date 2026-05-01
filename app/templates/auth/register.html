@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row align-items-center py-5 mt-md-4">
+    
+    <div class="col-md-6 pe-md-5 mb-5 mb-md-0">
+        <h1 class="font-manrope fw-bold mb-4" style="color: var(--primary); font-size: 3.5rem; line-height: 1.1;">A Arquitetura do Conhecimento.</h1>
+        <p class="fs-5 text-muted font-inter" style="line-height: 1.7;">
+            Junte-se à nossa plataforma. Um ambiente construído com precisão, sem linhas limitantes, onde cada detalhe é desenhado para a sua experiência de leitura.
+        </p>
+    </div>
+
+    <div class="col-md-5 offset-md-1">
+        <div class="surface-low p-5" style="border-radius: 1.5rem;">
+            <h2 class="fs-3 fw-bold mb-5 font-manrope" style="color: #111;">Criar Conta</h2>
+
+            <form action="{{ url_for('auth_routes.register') }}" method="post">
+                <div class="mb-4">
+                    <label for="username" class="form-label text-muted small fw-semibold text-uppercase tracking-wide font-inter">Nome de Usuário</label>
+                    <input type="text" name="username" id="username" class="form-control form-control-architect fs-5" placeholder="Como devemos chamá-lo?" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="email" class="form-label text-muted small fw-semibold text-uppercase tracking-wide font-inter">Endereço de E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control form-control-architect fs-5" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="mb-5">
+                    <label for="password" class="form-label text-muted small fw-semibold text-uppercase tracking-wide font-inter">Senha Segura</label>
+                    <input type="password" name="password" id="password" class="form-control form-control-architect fs-5" placeholder="••••••••" required>
+                </div>
+
+                <div class="d-grid gap-2 mb-4">
+                    <button type="submit" class="btn btn-primary-gradient btn-architect py-3 fw-bold fs-5 font-inter">Iniciar Jornada</button>
+                </div>
+
+                <div class="text-center">
+                    <p class="small text-muted mb-0 font-inter">
+                        Já possui uma conta? <a href="{{ url_for('auth_pages.login_form') }}" class="text-decoration-none fw-bold" style="color: var(--primary);">Acesse aqui</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
